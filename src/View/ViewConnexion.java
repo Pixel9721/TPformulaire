@@ -20,13 +20,13 @@ public class ViewConnexion {
     private Button btnConnexion, btnretour;
 
 
-    ViewConnexion(ViewHandler vConnexion, Group root){
+    ViewConnexion(ViewHandler vConnexion, Group root) {
         this.vConnexion = vConnexion;
         this.root = root;
 
         //initView1();
 
-        titreC = new Text(500,200,"CONNEXION");
+        titreC = new Text(500, 200, "CONNEXION");
         titreC.setFont(Font.font(50));
         labelLC = new Label("Login");
         labelLC.setFont(Font.font(20));
@@ -43,9 +43,10 @@ public class ViewConnexion {
         passwordC.setLayoutX(340);
         passwordC.setLayoutY(450);
 
-        btnConnexion = initButton(500,750,"Connexion");
+        btnConnexion = initButton(500, 750, "Connexion");
     }
-    void initView(){
+
+    void initView() {
         root.getChildren().clear();
         root.getChildren().add(titreC);
         root.getChildren().add(labelLC);
@@ -62,10 +63,15 @@ public class ViewConnexion {
         b.setText(texteDuBouton);
         return b;
     }
+
     public void setEventsConnexion(ControllerConnexion cc) {
         btnConnexion.setOnMouseClicked(cc);
     }
-    public Button getBtnConnexion(){return btnConnexion;}
+
+    public Button getBtnConnexion() {
+        return btnConnexion;
+    }
+}
 
 
 
