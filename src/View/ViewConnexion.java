@@ -44,8 +44,6 @@ public class ViewConnexion {
         passwordC.setLayoutY(450);
 
         btnConnexion = initButton(500,750,"Connexion");
-        btnretour = initButton(700,750,"Retour");
-
     }
     void initView(){
         root.getChildren().clear();
@@ -55,7 +53,6 @@ public class ViewConnexion {
         root.getChildren().add(labelMDPC);
         root.getChildren().add(passwordC);
         root.getChildren().add(btnConnexion);
-        root.getChildren().add(btnretour);
     }
 
     private Button initButton(int largeur, int hauteur, String texteDuBouton) {
@@ -70,7 +67,6 @@ public class ViewConnexion {
     }
     public Button getBtnConnexion(){return btnConnexion;}
 
-    public Button getBtnRetour() { return btnretour;}
-}
+
 
 
