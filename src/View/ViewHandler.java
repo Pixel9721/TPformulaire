@@ -11,7 +11,6 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import javax.swing.plaf.SplitPaneUI;
 
 public class ViewHandler extends Application {
     private Stage primaryStage;
@@ -37,11 +36,11 @@ public class ViewHandler extends Application {
 
         vFormulaire = new ViewInscription(this, root);
         vConnexion = new ViewConnexion(this, root);
-        //vProfile = new ViewProfile(this, root);
+        vProfile = new ViewProfile(this, root);
 
         ControllerFormulaire controllerFormulaire = new ControllerFormulaire(this, modelFormulaire);
         ControllerConnexion controllerConnexion = new ControllerConnexion(this, modelConnexion);
-        //ControllerProfil controllerProfil =new ControllerProfil(this, modelProfil);
+        ControllerProfil controllerProfil =new ControllerProfil(this, modelProfil);
 
         primaryStage.setTitle("TPFormulaire");
         primaryStage.setScene(scene);
@@ -49,24 +48,37 @@ public class ViewHandler extends Application {
     }
 
 
-
-    /*public Object getvGame() {
-
-    }*/
-
+    public void setEventHandlerInscription(ControllerFormulaire cf){
+        vFormulaire.setEvents(cf);
+    }
     public void setEventHandlerConnexion(ControllerConnexion cc) {
         vConnexion.setEventsConnexion(cc);
     }
-    /*public void setHandlerInscription(ControllerFormulaire cf){
-        vFormulaire.setEventsInscription(cf);
-    }*/
-   /* public void setEventHandlerProfil(ControllerProfil cp){
+    public void setEventHandlerProfil(ControllerProfil cp){
         vProfile.setEventsProfil(cp);
     }
-*/    public ViewInscription getvInscription() {
+
+     public ViewInscription getvInscription() {
         return vFormulaire;
     }
 
 
+    public void setInscriptionView() {
+        vFormulaire.initView();
+    }
+    public void setConnexionView(){
+        vConnexion.initView();
+    }
+    public void setProfileVeiw(){
+        vProfile.initView();
+
+    }
+    public ViewInscription getvFormulaire(){
+        return vFormulaire;
+    }
+
+    public ViewConnexion getvConnexion() {
+        return vConnexion;
+    }
 
 }
