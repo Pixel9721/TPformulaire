@@ -1,10 +1,8 @@
 package View;
 
-import Controller.ControllerFormulaire;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class ViewHandler extends Application {
@@ -12,6 +10,7 @@ public class ViewHandler extends Application {
     private Scene scene;
     private Group root;
     private ViewInscription vFormulaire;
+    private ViewConnexion vConnexion;
 
 
     public void start(Stage primaryStage){
@@ -22,6 +21,8 @@ public class ViewHandler extends Application {
         scene = new Scene(root,1200, 900);
 
         vFormulaire = new ViewInscription(this, root);
+        vConnexion = new ViewConnexion();
+
         primaryStage.setTitle("TPFormulaire");
         primaryStage.setScene(scene);
 
@@ -34,8 +35,4 @@ public class ViewHandler extends Application {
         launch(args);
     }
 
-    public void setEvnetHandlerFormulaire(ControllerFormulaire cf) {
-        vFormulaire.setEventsBack(cf);
-
-    }
 }
