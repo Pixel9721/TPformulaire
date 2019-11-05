@@ -66,13 +66,11 @@ public class ViewHandler extends Application {
     public void setInscriptionView() {
         vFormulaire.initView();
     }
-    public void setConnexionView(){
-        vConnexion.initView();
-    }
-    public void setProfileVeiw(){
-        vProfile.initView();
 
-    }
+    public void setConnexionView(){ vConnexion.initView(); }
+
+    public void setProfileVeiw(){ vProfile.initView();}
+
     public ViewInscription getvFormulaire(){
         return vFormulaire;
     }

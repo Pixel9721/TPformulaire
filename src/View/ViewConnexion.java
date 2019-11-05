@@ -17,7 +17,8 @@ public class ViewConnexion {
     private Label labelLC, labelMDPC;
     private TextField textLC;
     private PasswordField passwordC;
-    private Button btnConnexion;
+    private Button btnConnexion, btnretour;
+
 
     ViewConnexion(ViewHandler vConnexion, Group root){
         this.vConnexion = vConnexion;
@@ -42,8 +43,8 @@ public class ViewConnexion {
         passwordC.setLayoutX(340);
         passwordC.setLayoutY(450);
 
-        btnConnexion = initButton(500,750,"connexion");
-
+        btnConnexion = initButton(500,750,"Connexion");
+        btnretour = initButton(700,750,"Retour");
 
     }
     void initView(){
@@ -54,6 +55,7 @@ public class ViewConnexion {
         root.getChildren().add(labelMDPC);
         root.getChildren().add(passwordC);
         root.getChildren().add(btnConnexion);
+        root.getChildren().add(btnretour);
     }
 
     private Button initButton(int largeur, int hauteur, String texteDuBouton) {
@@ -66,5 +68,9 @@ public class ViewConnexion {
     public void setEventsConnexion(ControllerConnexion cc) {
         btnConnexion.setOnMouseClicked(cc);
     }
- public Button getBtnConnexion(){return btnConnexion;}
+    public Button getBtnConnexion(){return btnConnexion;}
+
+    public Button getBtnRetour() { return btnretour;}
 }
+
+
